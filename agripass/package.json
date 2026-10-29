@@ -1,0 +1,38 @@
+{
+  "name": "agripass-global",
+  "version": "1.0.0",
+  "description": "AgriPass Global — single-window agri-compliance & export document automation",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "build:artifact": "tsc && vite build --mode artifact && node scripts/to-artifact.mjs",
+    "typecheck": "tsc",
+    "data:fairs": "python3 scripts/excel_to_fairs.py data/Country_Regulatory_Details.xlsx src/data/fairs.generated.ts",
+    "preview": "vite preview",
+    "test": "esbuild tests/scenarios.ts --bundle --platform=node --format=esm --outfile=node_modules/.cache/scen.mjs --log-level=warning && node node_modules/.cache/scen.mjs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jspdf": "^2.5.2",
+    "jszip": "^3.10.1",
+    "lucide-react": "^0.460.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "zustand": "^4.5.5"
+  },
+  "devDependencies": {
+    "@types/node": "^22.9.0",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.3.4",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.17",
+    "typescript": "^5.6.3",
+    "vite": "^5.4.11",
+    "vite-plugin-singlefile": "^2.0.3"
+  },
+  "type": "module"
+}

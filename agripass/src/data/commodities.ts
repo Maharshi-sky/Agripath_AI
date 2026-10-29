@@ -1,0 +1,70 @@
+import type { Commodity } from './types';
+
+/** HS codes are 6-digit international subheadings; national tariff lines vary — confirm with your customs broker. */
+export const COMMODITIES: Commodity[] = [
+  // Seeds
+  { id: 'maize-hybrid', category: 'seeds', name: 'Hybrid Maize Seed', hs: '1005.10', hsNote: 'Maize seed for sowing is classified under 1005.10, not 1209.', botanical: 'Zea mays L.', crop: 'maize', gmRelevant: true },
+  { id: 'rice-hybrid', category: 'seeds', name: 'Hybrid Paddy (Rice) Seed', hs: '1006.10', botanical: 'Oryza sativa L.', crop: 'rice' },
+  { id: 'sorghum', category: 'seeds', name: 'Sorghum Seed', hs: '1007.10', botanical: 'Sorghum bicolor (L.) Moench', crop: 'sorghum' },
+  { id: 'pearl-millet', category: 'seeds', name: 'Hybrid Pearl Millet Seed', hs: '1008.21', botanical: 'Pennisetum glaucum (L.) R. Br.', crop: 'millet' },
+  { id: 'wheat', category: 'seeds', name: 'Wheat Seed', hs: '1001.91', botanical: 'Triticum aestivum L.', crop: 'wheat' },
+  { id: 'soybean', category: 'seeds', name: 'Soybean Seed', hs: '1201.10', botanical: 'Glycine max (L.) Merr.', crop: 'soybean', gmRelevant: true },
+  { id: 'groundnut', category: 'seeds', name: 'Groundnut Seed (in shell / kernels for sowing)', hs: '1202.30', botanical: 'Arachis hypogaea L.', crop: 'groundnut' },
+  { id: 'cotton', category: 'seeds', name: 'Cotton Planting Seed (delinted)', hs: '1207.21', botanical: 'Gossypium hirsutum L.', crop: 'cotton', gmRelevant: true },
+  { id: 'tomato', category: 'seeds', name: 'Hybrid Tomato Seed', hs: '1209.91', botanical: 'Solanum lycopersicum L.', crop: 'tomato', gmRelevant: true },
+  { id: 'chilli', category: 'seeds', name: 'Hybrid Hot Pepper (Chilli) Seed', hs: '1209.91', botanical: 'Capsicum annuum L.', crop: 'chilli' },
+  { id: 'onion', category: 'seeds', name: 'Onion Seed', hs: '1209.91', botanical: 'Allium cepa L.', crop: 'onion' },
+  { id: 'cabbage', category: 'seeds', name: 'Hybrid Cabbage Seed', hs: '1209.91', botanical: 'Brassica oleracea var. capitata L.', crop: 'cabbage' },
+  { id: 'okra', category: 'seeds', name: 'Okra Seed', hs: '1209.91', botanical: 'Abelmoschus esculentus (L.) Moench', crop: 'okra' },
+  { id: 'watermelon', category: 'seeds', name: 'Hybrid Watermelon Seed', hs: '1209.91', botanical: 'Citrullus lanatus (Thunb.) Matsum. & Nakai', crop: 'watermelon' },
+  { id: 'forage-sorghum', category: 'seeds', name: 'Forage Sorghum / Sudan Grass Seed', hs: '1209.29', botanical: 'Sorghum × drummondii', crop: 'sorghum' },
+  // Fertilizers
+  { id: 'npk-191919', category: 'fertilizers', name: 'NPK 19:19:19 Water-Soluble Fertilizer', hs: '3105.20', composition: 'N 19% · P₂O₅ 19% · K₂O 19%', form: 'Crystalline powder (water-soluble)' },
+  { id: 'dap', category: 'fertilizers', name: 'Diammonium Phosphate (DAP 18-46-0)', hs: '3105.30', composition: 'N 18% · P₂O₅ 46%', form: 'Granular', restrictedExport: 'Check the DGFT export policy for DAP before contracting; exports of subsidized fertilizers are periodically restricted.' },
+  { id: 'urea', category: 'fertilizers', name: 'Urea 46% N (prilled)', hs: '3102.10', composition: 'Total N 46%', form: 'Prilled', restrictedExport: 'Urea exports are restricted/canalised under DGFT policy; an export authorisation is required.' },
+  { id: 'sop', category: 'fertilizers', name: 'Sulphate of Potash (SOP 0-0-50)', hs: '3104.30', composition: 'K₂O 50% · S 17.5%', form: 'Powder / granular' },
+  { id: 'calcium-nitrate', category: 'fertilizers', name: 'Calcium Nitrate (water-soluble)', hs: '3102.60', composition: 'N 15.5% · CaO 26.5%', form: 'Granular' },
+  { id: 'zinc-sulphate', category: 'fertilizers', name: 'Zinc Sulphate Monohydrate (33% Zn)', hs: '2833.29', composition: 'Zn 33% · S 15%', form: 'Powder / granular', un: 'UN3077', hazardClass: '9', packingGroup: 'III' },
+  { id: 'micronutrient-mix', category: 'fertilizers', name: 'Chelated Micronutrient Mixture (EDTA)', hs: '3824.99', composition: 'Fe 2.5% · Mn 1% · Zn 3% · Cu 1% · B 0.5% · Mo 0.1%', form: 'Water-soluble powder' },
+  { id: 'vermicompost', category: 'fertilizers', name: 'Organic Manure / Vermicompost', hs: '3101.00', composition: 'Organic carbon ≥ 12% · Total N ≥ 1%', form: 'Granular / powder', organic: true },
+  // Agrochem
+  { id: 'chlorantraniliprole', category: 'agrochem', name: 'Chlorantraniliprole 18.5% SC', hs: '3808.91', activeIngredient: 'Chlorantraniliprole', aiContent: '18.5% w/w', formulation: 'SC (Suspension Concentrate)', un: 'UN3082', hazardClass: '9', packingGroup: 'III' },
+  { id: 'imidacloprid', category: 'agrochem', name: 'Imidacloprid 17.8% SL', hs: '3808.91', activeIngredient: 'Imidacloprid', aiContent: '17.8% w/w', formulation: 'SL (Soluble Liquid)', un: 'UN3082', hazardClass: '9', packingGroup: 'III' },
+  { id: 'lambda', category: 'agrochem', name: 'Lambda-cyhalothrin 5% EC', hs: '3808.91', activeIngredient: 'Lambda-cyhalothrin', aiContent: '5% w/w', formulation: 'EC (Emulsifiable Concentrate)', un: 'UN1993', hazardClass: '3', packingGroup: 'III' },
+  { id: 'emamectin', category: 'agrochem', name: 'Emamectin Benzoate 5% SG', hs: '3808.91', activeIngredient: 'Emamectin benzoate', aiContent: '5% w/w', formulation: 'SG (Soluble Granule)', un: 'UN3077', hazardClass: '9', packingGroup: 'III' },
+  { id: 'mancozeb', category: 'agrochem', name: 'Mancozeb 75% WP', hs: '3808.92', activeIngredient: 'Mancozeb', aiContent: '75% w/w', formulation: 'WP (Wettable Powder)', un: 'UN3077', hazardClass: '9', packingGroup: 'III' },
+  { id: 'tebuconazole', category: 'agrochem', name: 'Tebuconazole 25.9% EC', hs: '3808.92', activeIngredient: 'Tebuconazole', aiContent: '25.9% w/w', formulation: 'EC (Emulsifiable Concentrate)', un: 'UN1993', hazardClass: '3', packingGroup: 'III' },
+  { id: 'glyphosate', category: 'agrochem', name: 'Glyphosate 41% SL (IPA salt)', hs: '3808.93', activeIngredient: 'Glyphosate isopropylamine salt', aiContent: '41% w/w', formulation: 'SL (Soluble Liquid)' },
+  { id: 'atrazine', category: 'agrochem', name: 'Atrazine 50% WP', hs: '3808.93', activeIngredient: 'Atrazine', aiContent: '50% w/w', formulation: 'WP (Wettable Powder)', un: 'UN3077', hazardClass: '9', packingGroup: 'III' },
+  { id: 'carbofuran', category: 'agrochem', name: 'Carbofuran 3% CG', hs: '3808.91', activeIngredient: 'Carbofuran', aiContent: '3% w/w', formulation: 'CG (Encapsulated Granule)', un: 'UN2757', hazardClass: '6.1', packingGroup: 'III' },
+  { id: 'monocrotophos', category: 'agrochem', name: 'Monocrotophos 36% SL', hs: '3808.91', activeIngredient: 'Monocrotophos', aiContent: '36% w/w', formulation: 'SL (Soluble Liquid)', un: 'UN3018', hazardClass: '6.1', packingGroup: 'II' },
+  // Biologicals
+  { id: 'trichoderma', category: 'biologicals', name: 'Trichoderma viride 1% WP (bio-fungicide)', hs: '3808.92', bioType: 'biopesticide', organism: 'Trichoderma viride', aiContent: '1% w/w, min 2×10⁶ CFU/g', formulation: 'WP (Wettable Powder)' },
+  { id: 'beauveria', category: 'biologicals', name: 'Beauveria bassiana 1.15% WP (bio-insecticide)', hs: '3808.91', bioType: 'biopesticide', organism: 'Beauveria bassiana', aiContent: '1.15% w/w, min 1×10⁸ CFU/g', formulation: 'WP (Wettable Powder)' },
+  { id: 'pseudomonas', category: 'biologicals', name: 'Pseudomonas fluorescens 1% WP', hs: '3808.92', bioType: 'biopesticide', organism: 'Pseudomonas fluorescens', aiContent: '1% w/w, min 1×10⁸ CFU/g', formulation: 'WP (Wettable Powder)' },
+  { id: 'bt', category: 'biologicals', name: 'Bacillus thuringiensis var. kurstaki 5% WP', hs: '3808.91', bioType: 'biopesticide', organism: 'Bacillus thuringiensis subsp. kurstaki', aiContent: '5% w/w', formulation: 'WP (Wettable Powder)' },
+  { id: 'rhizobium', category: 'biologicals', name: 'Rhizobium Liquid Biofertilizer', hs: '3002.49', hsNote: 'Cultures of micro-organisms: 3002.49 (HS 2022).', bioType: 'biofertilizer', organism: 'Rhizobium leguminosarum', aiContent: 'min 1×10⁸ CFU/ml', formulation: 'Liquid' },
+  { id: 'azotobacter', category: 'biologicals', name: 'Azotobacter Carrier-based Biofertilizer', hs: '3002.49', bioType: 'biofertilizer', organism: 'Azotobacter chroococcum', aiContent: 'min 5×10⁷ CFU/g', formulation: 'Carrier-based powder' },
+  { id: 'mycorrhiza', category: 'biologicals', name: 'Mycorrhizal (AM fungi) Inoculant', hs: '3002.49', bioType: 'biofertilizer', organism: 'Rhizophagus irregularis', aiContent: 'min 100 viable propagules/g', formulation: 'Granular' },
+  { id: 'seaweed', category: 'biologicals', name: 'Seaweed Extract Bio-stimulant', hs: '3101.00', bioType: 'biostimulant', organism: 'Ascophyllum nodosum (extract)', aiContent: 'Seaweed extract 20% w/w', formulation: 'Liquid' },
+  // Machinery
+  { id: 'tractor-45', category: 'machinery', name: 'Agricultural Tractor 45 HP (2WD)', hs: '8701.92', hsNote: 'HS 2022 splits tractors by engine power: 8701.92 is >18 to ≤37 kW (45 HP ≈ 33.6 kW).', machineKind: 'tractor' },
+  { id: 'tractor-75', category: 'machinery', name: 'Agricultural Tractor 75 HP (4WD)', hs: '8701.93', machineKind: 'tractor' },
+  { id: 'power-tiller', category: 'machinery', name: 'Power Tiller 12–15 HP', hs: '8701.10', machineKind: 'tiller' },
+  { id: 'rotavator', category: 'machinery', name: 'Rotary Tiller (Rotavator)', hs: '8432.29', machineKind: 'implement' },
+  { id: 'seed-drill', category: 'machinery', name: 'Seed-cum-Fertilizer Drill', hs: '8432.39', machineKind: 'implement' },
+  { id: 'combine', category: 'machinery', name: 'Self-propelled Combine Harvester', hs: '8433.51', machineKind: 'harvester' },
+  { id: 'thresher', category: 'machinery', name: 'Multi-crop Thresher', hs: '8433.52', machineKind: 'processing' },
+  { id: 'sprayer', category: 'machinery', name: 'Knapsack Power Sprayer', hs: '8424.41', machineKind: 'sprayer' },
+  // Irrigation
+  { id: 'drip-lateral', category: 'irrigation', name: 'Inline Drip Lateral 16 mm (emitting pipe)', hs: '3917.32', standard: 'ISO 9261:2004 / IS 13488', material: 'LLDPE with carbon black (UV-stabilized)' },
+  { id: 'online-dripper', category: 'irrigation', name: 'Online Pressure-Compensating Drippers', hs: '8424.90', standard: 'ISO 9261:2004 / IS 13487', material: 'Polypropylene / HDPE body, silicone diaphragm' },
+  { id: 'drip-system', category: 'irrigation', name: 'Complete Drip Irrigation System (kit)', hs: '8424.82', standard: 'ISO 9261:2004 / IS 13487 / IS 13488', material: 'LLDPE / PP / PVC components' },
+  { id: 'sprinkler', category: 'irrigation', name: 'Impact Sprinkler Heads & Risers', hs: '8424.82', standard: 'ISO 15886-3 / IS 12232', material: 'Brass / engineering plastic' },
+  { id: 'hdpe-pipe', category: 'irrigation', name: 'HDPE Pipes for Irrigation (PE100)', hs: '3917.21', standard: 'ISO 4427 / IS 4984', material: 'PE100 HDPE' },
+  { id: 'pvc-pipe', category: 'irrigation', name: 'Rigid PVC Pipes (sub-main)', hs: '3917.23', standard: 'IS 4985 / ISO 1452', material: 'Unplasticized PVC' },
+  { id: 'disc-filter', category: 'irrigation', name: 'Disc / Screen Filters', hs: '8421.21', standard: 'ISO 9912-2 / IS 12785', material: 'Reinforced polypropylene' },
+  { id: 'solar-pump', category: 'irrigation', name: 'Solar Submersible Pump Set', hs: '8413.70', standard: 'IEC 62253 / MNRE specification', material: 'Stainless steel AISI 304 pump end' },
+];
+
+export const commodityById = (id: string) => COMMODITIES.find((c) => c.id === id);
